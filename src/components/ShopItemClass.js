@@ -7,26 +7,22 @@ const propTypes = {
 };
 
 class ShopItemClass extends React.Component {
-  constructor({ item }) {
-    super();
-    this.item = item;
-  }
-
   render() {
+    const { item } = this.props;
     return (
       <div className="main-content">
-        <h2>{this.item.brand}</h2>
-        <h1>{this.item.title}</h1>
-        <h3>{this.item.description}</h3>
-        <div className="description">{this.item.descriptionFull}</div>
+        <h2>{item.brand}</h2>
+        <h1>{item.title}</h1>
+        <h3>{item.description}</h3>
+        <div className="description">{item.descriptionFull}</div>
         <div className="highlight-window mobile">
           <div className="highlight-overlay"></div>
         </div>
         <div className="divider"></div>
         <div className="purchase-info">
           <div className="price">
-            {this.item.currency}
-            {this.item.price.toFixed(2)}
+            {item.currency}
+            {item.price.toFixed(2)}
           </div>
           <button>Добавить в корзину</button>
         </div>
